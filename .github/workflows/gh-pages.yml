@@ -1,6 +1,4 @@
 - name: Deploy Hugo Site
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
 
 on:
   push:
