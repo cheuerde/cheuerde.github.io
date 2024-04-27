@@ -9,22 +9,28 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the repo
-      uses: actions/checkout@v2
+      - name: Check out the repo
+        uses: actions/checkout@v2
 
-    - name: Set up Hugo (Extended)
-      run: |
-        curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.125.4/hugo_extended_0.125.4_Linux-64bit.tar.gz | tar -xz -C /tmp/
-        sudo mv /tmp/hugo /usr/local/bin/hugo
-        hugo version
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
 
-    - name: Build
-      run: hugo --minify
+      - name: Install R packages
+        run: |
+          install.packages("remotes")
+          remotes::install_github("rstudio/blogdown")
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: gh-pages  # Correct input to specify the deployment branch
+      - name: Install Hugo (Extended)
+        run: |
+          blogdown::install_hugo(version = "0.125.4", extended = TRUE)
 
+      - name: Build the Site
+        run: |
+          Rscript -e 'blogdown::build_site(build_rmd = "html")'
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages  # This branch will be used to deploy
