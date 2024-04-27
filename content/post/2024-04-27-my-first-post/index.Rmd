@@ -1,0 +1,33 @@
+---
+title: My First Post
+author: ''
+date: '2024-04-27'
+slug: my-first-post
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-04-27T07:52:16+02:00'
+featured: no
+image:
+  caption: 'HALLO'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+## Using `plotcli` convenience wrappers
+
+# Density plot
+
+```{r}
+if(!require(plotcli)) install.packages("plotcli")
+library(plotcli)
+# Generate sample data
+sample_data <- rnorm(1000, mean = 5, sd = 2)
+
+# Create a density plot
+plotcli_density(sample_data, color = "blue", braille = TRUE)
+``` 
+
