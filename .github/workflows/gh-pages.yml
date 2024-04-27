@@ -1,3 +1,42 @@
+# if we want to rebuild the page in actions, we do this:
+#name: Deploy Hugo Site
+#
+#on:
+#  push:
+#    branches:
+#      - main  # Ensure this is your main content branch
+#
+#jobs:
+#  build-and-deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out the repo
+#        uses: actions/checkout@v2
+#      
+#      - name: Setup R
+#        uses: r-lib/actions/setup-r@v2
+#
+#      - name: Install Pandoc
+#        run: |
+#          wget "https://github.com/jgm/pandoc/releases/download/2.17.1.1/pandoc-2.17.1.1-1-amd64.deb" && sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb
+#      
+#      - name: Install Hugo and R packages
+#        run: |
+#          Rscript -e 'install.packages("blogdown")'
+#          Rscript -e 'blogdown::install_hugo(version = "0.125.4", extended = TRUE)'
+#
+#      - name: Render R Markdown and Build the Site
+#        run: |
+#          Rscript -e 'blogdown::build_site(build_rmd = TRUE)'
+#
+#
+#      - name: Deploy to GitHub Pages
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./public
+#          publish_branch: gh-pages  # This branch will be used to deploy
+# if we simply want to push changes and rendering happened elsewhere and was pushed into repo, we do this:
 name: Deploy Hugo Site
 
 on:
@@ -9,29 +48,21 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
+    - name: Check out the repo
+      uses: actions/checkout@v2
 
-      - name: Install Pandoc
-        run: |
-          wget "https://github.com/jgm/pandoc/releases/download/2.17.1.1/pandoc-2.17.1.1-1-amd64.deb" && sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb
-      
-      - name: Install Hugo and R packages
-        run: |
-          Rscript -e 'install.packages("blogdown")'
-          Rscript -e 'blogdown::install_hugo(version = "0.125.4", extended = TRUE)'
+    - name: Set up Hugo (Extended)
+      run: |
+        curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.125.4/hugo_extended_0.125.4_Linux-64bit.tar.gz | tar -xz -C /tmp/
+        sudo mv /tmp/hugo /usr/local/bin/hugo
+        hugo version
 
-      - name: Render R Markdown and Build the Site
-        run: |
-          Rscript -e 'blogdown::build_site(build_rmd = TRUE)'
+    - name: Build
+      run: hugo --minify
 
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages  # This branch will be used to deploy
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages  # Correct input to specify the deployment branch
