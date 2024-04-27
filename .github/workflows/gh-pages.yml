@@ -1,4 +1,4 @@
-- name: Deploy Hugo Site
+name: Deploy Hugo Site
 
 on:
   push:
@@ -12,10 +12,6 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v2
 
-    #- name: Set up Hugo
-    #  uses: peaceiris/actions-hugo@v2
-    #  with:
-    #    hugo-version: 'latest'
     - name: Set up Hugo (Extended)
       run: |
         curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.125.4/hugo_extended_0.125.4_Linux-64bit.tar.gz | tar -xz -C /tmp/
@@ -28,6 +24,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GIT_PRIVATE }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-
