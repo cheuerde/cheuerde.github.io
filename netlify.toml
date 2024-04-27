@@ -15,3 +15,7 @@ command = 'hugo -F -b $DEPLOY_PRIME_URL'
 [context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
+
+[params.utterances]
+repo = "github_username/repo_name" # Repository to store comments
+issueTerm = "pathname"
