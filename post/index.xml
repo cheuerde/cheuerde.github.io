@@ -1,13 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Academic</title><link>https://example.com/post/</link><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate><image><url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://example.com/post/</link></image><item><title>Blog with Jupyter Notebooks!</title><link>https://example.com/post/blog-with-jupyter/</link><pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/blog-with-jupyter/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">IPython.core.display&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Image&lt;/span>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Academic</title><link>https://example.com/post/</link><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 27 Apr 2024 00:00:00 +0000</lastBuildDate><image><url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://example.com/post/</link></image><item><title>My First Post</title><link>https://example.com/post/my-first-post/</link><pubDate>Sat, 27 Apr 2024 00:00:00 +0000</pubDate><guid>https://example.com/post/my-first-post/</guid><description>&lt;h2 id="using-plotcli-convenience-wrappers">Using &lt;code>plotcli&lt;/code> convenience wrappers&lt;/h2>
+&lt;h1 id="density-plot">Density plot&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nf">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">plotcli&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="nf">install.packages&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;plotcli&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: plotcli
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: R6
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: crayon
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: stringr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: ggplot2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## Attaching package: &amp;#39;ggplot2&amp;#39;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## The following object is masked from &amp;#39;package:crayon&amp;#39;:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## %+%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: knitr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">## Loading required package: rmarkdown
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## plotcli loaded. Use plotcli_options() to set global options.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">library&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">plotcli&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Generate sample data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sample_data&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">rnorm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1000&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">mean&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">sd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Create a density plot&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">plotcli_density&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sample_data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">color&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">braille&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">TRUE&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## ┌────────────────────────────────────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## 0.2 │ ⢅⡔⡤⡴⠦ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡳⠒ ⡳⠤ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⢐⠣ ⡤⠦ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⠰⠶ ⡣⡈ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡇ ⡐⢤⠦ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## 0.2 │ ⡳ ⡃⠘ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡰⠣ ⡲⠢ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⠘ ⡥ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡱⠑ ⠰⠘ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## Density 0.1 │ ⠰⠥ ⡂⠖ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⠷ ⡓⠨ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡱⠒ ⡓⠦ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⢁⠤ ⡓⠦ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⢁⠦ ⡤⠢ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## 0.1 │ ⢃⠤ ⡵ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡧⠔ ⡧ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⡐⡩⠑ ⡀⡖ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⢉⡄ ⡀⢗ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## │ ⢁⢪⡤⠑ ⡤⢚⡨ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## 0.0 │⣨⣈⢨⣈⢨⢘⡔⡕⠔ ⡀⡕⡴⢪⣈⢨⣈⢨⣈⢨⠬│
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## └────────────────────────────────────────────────────────────┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## -2.0 1.6 5.1 8.7 12.3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">## x
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">##
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog with Jupyter Notebooks!</title><link>https://example.com/post/blog-with-jupyter/</link><pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/blog-with-jupyter/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">IPython.core.display&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Image&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Image&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="png" srcset="
-/post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_73179593afc46954cb4c21418984f7f4.webp 400w,
+/post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_5a714abab5f53c70f7c38e19755638d3.webp 400w,
 /post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_6b76da17c04a40aee4c1c633206f8065.webp 760w,
 /post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
-src="https://example.com/post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_73179593afc46954cb4c21418984f7f4.webp"
+src="https://example.com/post/blog-with-jupyter/output_1_0_hu1e42f419f47ffd4b1ca9ef8f6670390a_11155_5a714abab5f53c70f7c38e19755638d3.webp"
 width="601"
 height="203"
 loading="lazy" data-zoomable />&lt;/div>
@@ -77,45 +128,38 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;p>&lt;a href="https://docs.hugoblox.com/customization" target="_blank" rel="noopener">Choose a stunning &lt;strong>theme&lt;/strong> and &lt;strong>font&lt;/strong>&lt;/a> for your site. Themes are fully customizable.&lt;/p>
 &lt;h2 id="license">License&lt;/h2>
 &lt;p>Copyright 2016-present &lt;a href="https://georgecushen.com" target="_blank" rel="noopener">George Cushen&lt;/a>.&lt;/p>
-&lt;p>Released under the &lt;a href="https://github.com/HugoBlox/hugo-blox-builder/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>Hello R Markdown</title><link>https://example.com/post/2020-12-01-r-rmarkdown/</link><pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate><guid>https://example.com/post/2020-12-01-r-rmarkdown/</guid><description>
-&lt;div id="r-markdown" class="section level1">
-&lt;h1>R Markdown&lt;/h1>
-&lt;p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com&lt;/a>.&lt;/p>
+&lt;p>Released under the &lt;a href="https://github.com/HugoBlox/hugo-blox-builder/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>Hello R Markdown</title><link>https://example.com/post/2020-12-01-r-rmarkdown/</link><pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate><guid>https://example.com/post/2020-12-01-r-rmarkdown/</guid><description>&lt;h1 id="r-markdown">R Markdown&lt;/h1>
+&lt;p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href="http://rmarkdown.rstudio.com" target="_blank" rel="noopener">http://rmarkdown.rstudio.com&lt;/a>.&lt;/p>
 &lt;p>You can embed an R code chunk like this:&lt;/p>
-&lt;pre class="r">&lt;code>summary(cars)
-## speed dist
-## Min. : 4.0 Min. : 2.00
-## 1st Qu.:12.0 1st Qu.: 26.00
-## Median :15.0 Median : 36.00
-## Mean :15.4 Mean : 42.98
-## 3rd Qu.:19.0 3rd Qu.: 56.00
-## Max. :25.0 Max. :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-##
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-##
-## Coefficients:
-## (Intercept) speed
-## -17.579 3.932&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;div id="including-plots" class="section level1">
-&lt;h1>Including Plots&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">summary&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cars&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## speed dist &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Min. : 4.0 Min. : 2.00 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 1st Qu.:12.0 1st Qu.: 26.00 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Median :15.0 Median : 36.00 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Mean :15.4 Mean : 42.98 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## 3rd Qu.:19.0 3rd Qu.: 56.00 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Max. :25.0 Max. :120.00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fit&lt;/span> &lt;span class="o">&amp;lt;-&lt;/span> &lt;span class="nf">lm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dist&lt;/span> &lt;span class="o">~&lt;/span> &lt;span class="n">speed&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">cars&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fit&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Call:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## lm(formula = dist ~ speed, data = cars)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## Coefficients:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## (Intercept) speed &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">## -17.579 3.932&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="including-plots">Including Plots&lt;/h1>
 &lt;p>You can also embed plots. See Figure &lt;a href="#fig:pie">1&lt;/a> for example:&lt;/p>
-&lt;pre class="r">&lt;code>par(mar = c(0, 1, 0, 1))
-pie(
-c(280, 60, 20),
-c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-init.angle = -50, border = NA
-)&lt;/code>&lt;/pre>
-&lt;div class="figure">&lt;span style="display:block;" id="fig:pie">&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-r" data-lang="r">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">par&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">mar&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">pie&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">280&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="m">20&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#39;Sky&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#39;Sunny side of pyramid&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#39;Shady side of pyramid&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">col&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">c&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#39;#0292D8&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#39;#F7EA39&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#39;#C4B632&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">init.angle&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">-50&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">border&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">NA&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="figure">
 &lt;img src="https://example.com/post/2020-12-01-r-rmarkdown/index.en_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-&lt;p class="caption">
-Figure 1: A fancy pie chart.
-&lt;/p>
-&lt;/div>
+&lt;p class="caption">&lt;span id="fig:pie">&lt;/span>Figure 1: A fancy pie chart.&lt;/p>
 &lt;/div></description></item><item><title>Writing technical content in Markdown</title><link>https://example.com/post/writing-technical-content/</link><pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/writing-technical-content/</guid><description>&lt;p>Hugo Blox Builder is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.&lt;/p>
 &lt;p>&lt;strong>Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong>&lt;/p>
 &lt;p>On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Wowchemy.&lt;/p>
@@ -207,7 +251,7 @@ console.log('code block');
 &lt;p>Wowchemy supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive charts.&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-859231674" class="chart">&lt;/div>
+&lt;div id="chart-674851932" class="chart">&lt;/div>
 &lt;script>
 (function() {
 let a = setInterval( function() {
@@ -216,7 +260,7 @@ return;
 }
 clearInterval( a );
 Plotly.d3.json("./line-chart.json", function(chart) {
-Plotly.plot('chart-859231674', chart.data, chart.layout, {responsive: true});
+Plotly.plot('chart-674851932', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
