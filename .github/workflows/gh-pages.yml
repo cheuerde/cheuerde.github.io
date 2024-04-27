@@ -11,20 +11,16 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-
+      
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
-
-      - name: Install R packages
+      
+      - name: Install Hugo and R packages
         run: |
-          install.packages("remotes")
-          remotes::install_github("rstudio/blogdown")
+          Rscript -e 'install.packages("blogdown")'
+          Rscript -e 'blogdown::install_hugo(version = "0.125.4", extended = TRUE)'
 
-      - name: Install Hugo (Extended)
-        run: |
-          blogdown::install_hugo(version = "0.125.4", extended = TRUE)
-
-      - name: Build the Site
+      - name: Render R Markdown and Build the Site
         run: |
           Rscript -e 'blogdown::build_site(build_rmd = "html")'
 
