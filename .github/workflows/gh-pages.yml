@@ -26,7 +26,8 @@ jobs:
 
       - name: Render R Markdown and Build the Site
         run: |
-          Rscript -e 'blogdown::build_site(build_rmd = "html")'
+          Rscript -e 'blogdown::build_site(build_rmd = TRUE)'
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
